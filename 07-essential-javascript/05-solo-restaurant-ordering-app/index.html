@@ -16,39 +16,66 @@
                 <article class="menu-item">
                     <img class="item-picture" src="/images/pizza-item.png" alt="Pizza slice with pepperoni">
                     <ul class="item-details">
-                        <li class="text-heading">Pizza</li>
-                        <li class="text-subheading">pepperoni,mushrom,mozarella</li>
-                        <li class="text-price">$14</li>
+                        <li class="item-name text-heading">Pizza</li>
+                        <li class="item-ingredients text-subheading">pepperoni,mushrom,mozarella</li>
+                        <li class="item-price text-price">$14</li>
                     </ul> 
-                    <button class="item-add-btn text-icon">+</button>      
+                    <button class="item-add-btn text-icon" data-add="id0">+</button>      
                 </article>
                 <article class="menu-item">
                     <img class="item-picture" src="/images/burger-item.png" alt="Hamburger with cheese, lettuce, and beef patty">
                     <ul class="item-details">
-                        <li class="text-heading">Hamburger</li>
-                        <li class="text-subheading">beef, cheese, lettuce</li>
-                        <li class="text-price">$12</li>
+                        <li class="item-name text-heading">Hamburger</li>
+                        <li class="item-ingredients text-subheading">beef, cheese, lettuce</li>
+                        <li class="item-price text-price">$12</li>
                     </ul> 
-                    <button class="item-add-btn text-icon">+</button>      
+                    <button class="item-add-btn text-icon" data-add="id1">+</button>      
                 </article>
                 <article class="menu-item">
                     <img class="item-picture" src="/images/beer-item.png" alt="Beer mug with foam">
                     <ul class="item-details">
-                        <li class="text-heading">Beer</li>
-                        <li class="text-subheading">grain, hops, yeast, water</li>
-                        <li class="text-price">$12</li>
+                        <li class="item-name text-heading">Beer</li>
+                        <li class="item-ingredients text-subheading">grain, hops, yeast, water</li>
+                        <li class="item-price text-price" >$12</li>
                     </ul> 
-                    <button class="item-add-btn text-icon">+</button>      
+                    <button class="item-add-btn text-icon" data-add="id2">+</button>      
                 </article>
             </section>    
+            
             <section class="order-summary"> 
+                <h2>Your order</h2>
+                <dl class="order-items">
+                    <div class="order-item">
+                        <dt>Pizza</dt>
+                        <button type="button" aria-label="Remove Pizza">remove</button>
+                        <dd>$14</dd>
+                    </div>
+                    <div class="order-item">
+                        <dt>Beer</dt>
+                        <button type="button" aria-label="Remove Beer">remove</button>
+                        <dd>$12</dd>
+                    </div>
+                </dl>
+                <div class="order-total">
+                    <strong>Total price:</strong>
+                    <data value="26">$26</data>
+                </div>
+                <button class="complete-order-btn" id="order-btn">Complete order</button>
             </section>
+            
             <section class="order-confirmation">
+                <p>Thanks, James! Your order is on its way!</p>
             </section>            
         </main>
     <!-- Modals here -->
     <div class="modal" id="payment-modal">
-        ...
+        <header>Enter card details</header>
+        <form>
+            <input type="text" placeholder="Enter your name" required>
+            <input type="number" placeholder="Enter card number" required>
+            <input type="number" placeholder="Enter CVV" required>
+            <button type="submit" id="pay-btn">Pay</button>
+        </form>
     </div>
 	<script src="index.js"></script>
     </body>

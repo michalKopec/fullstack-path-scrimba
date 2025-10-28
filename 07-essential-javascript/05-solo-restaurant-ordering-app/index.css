@@ -19,8 +19,8 @@
   --text-2xl: 32px;
   
   /* Line Heights */
-  --leading-tight: 30px;
-  --leading-normal: 36px; /* used to be 24px from Figma, adjusting to match visual space */
+  --leading-tight: 16.8px;
+  --leading-normal: 24px; 
   --leading-relaxed: 31.12px;
   
   /* Colors */
@@ -119,6 +119,8 @@ ul {
     margin:0;
     padding:0;
     list-style: none;
+    
+
 }
 
 main {
@@ -133,6 +135,18 @@ main {
 }
 
 /* menu feed item  */
+
+.item-details {
+      margin-top: 14px; /* align the item name visually following figma */
+}
+
+.item-name {
+  margin-bottom: 8px;
+}
+
+.item-ingredients {
+  margin-bottom: 16px;
+}
 
 .menu-item {
     display: flex; 
@@ -149,7 +163,8 @@ main {
 
 
 .item-details {
-    flex: 1; /* takes all remaining space, pushes add button right */  
+    flex-grow: 1; /* takes all remaining space, pushes add button right */ 
+     
 }
 
 .item-add-btn {
@@ -159,9 +174,51 @@ main {
    border-radius: 50%;
    background: transparent;
    
-  display: flex; /* center the plus */
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0; /* prevent the button from being squished */
+    display: flex; /* center the plus */
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* prevent the button from being squished */
 }
+
+/* order summary section */ 
+.order-summary {
+  display: none;
+}
+
+.order-item {
+  display: flex; 
+}
+
+.complete-order-btn {
+  margin-top: 20px; 
+  width: 100%; 
+}
+
+/* order confirmation section */
+.order-confirmation {
+  display: none; 
+  background-color: var(--color-bg-light);
+  padding: 40px 60px; 
+  margin-top: 45px;
+  
+}
+
+/* modal */ 
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 524px;
+    height: 542px; 
+    
+    background-color: #3C3C3C;
+    
+}
+
+
 
