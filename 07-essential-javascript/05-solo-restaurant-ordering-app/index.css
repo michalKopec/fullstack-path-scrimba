@@ -1,0 +1,167 @@
+/* design system */
+:root {
+  /* Font Families */
+  --font-primary: Smythe, serif;
+  --font-secondary: Verdana, sans-serif;
+  --font-tertiary: Inter, sans-serif;
+  
+  /* Font Weights */
+  --weight-thin: 200;
+  --weight-regular: 400;
+  --weight-bold: 700;
+  
+  /* Font Sizes */
+  --text-xs: 12px;
+  --text-sm: 16px;
+  --text-md: 20px;
+  --text-lg: 24px;
+  --text-xl: 28px;
+  --text-2xl: 32px;
+  
+  /* Line Heights */
+  --leading-tight: 30px;
+  --leading-normal: 36px; /* used to be 24px from Figma, adjusting to match visual space */
+  --leading-relaxed: 31.12px;
+  
+  /* Colors */
+  --color-accent: #16DB99;
+  --color-bg-light: #ECFDF5;
+  --color-secondary: #8B8B8B; 
+  --color-gray: #DEDEDE; 
+  --color-gray-light: #3C3C3C; 
+  --color-gray-medium: #D2D2D2; 
+}
+
+/* Typography Utilities */
+
+.text-heading {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-2xl);     /* 32px */
+  line-height: var(--leading-tight); /* 16.8px */
+}
+
+.text-subheading {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-sm);      /* 16px */
+  line-height: var(--leading-normal); /* 24px */
+  color: var(--color-secondary); 
+}
+
+
+.text-price {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-md);      /* 20px */ 
+  line-height: var(--leading-normal); /* 24px */
+}
+
+.text-icon {
+  font-family: var(--font-tertiary);
+  font-weight: var(--weight-thin);
+  font-size: var(--text-2xl);     /* 32px */
+  line-height: var(--leading-normal); /* 24px */
+  text-align: center;
+  color: var(--color-gray-light); 
+}
+
+
+/*
+.text-heading {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-xl);      /* 28px 
+  line-height: var(--leading-tight); } /* 16.8px */
+
+
+
+
+
+.text-caption {
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-xs);      /* 12px */
+  line-height: var(--leading-normal); /* 24px */
+}
+
+.text-body-bold {
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-sm);      /* 16px */
+  line-height: var(--leading-normal); /* 24px */
+}
+
+.text-title {
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-lg);      /* 24px */
+  line-height: var(--leading-relaxed); /* 31.12px */
+}
+
+.text-title-md {
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-md);      /* 20px */
+  line-height: var(--leading-relaxed); /* 31.12px */
+}
+
+
+/* page styles  */
+
+body {
+    margin: 0 auto;
+    max-width: 600px; 
+    background-color: #F5F5F5; 
+} 
+
+ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+main {
+    background-color: #fff; 
+    padding: 30px 46px 0px; 
+}
+
+.header-img {
+    display: block; /*remove the gap between header image and menu feed */
+    width: 100%;
+    height: auto; 
+}
+
+/* menu feed item  */
+
+.menu-item {
+    display: flex; 
+    align-items: center; /*TO DO the add buttons are slightly off center, check back with Figma */
+    gap: 30px; 
+    height: 185px; 
+    border-bottom: 1px solid var(--color-gray-medium); 
+}
+
+.item-picture {
+    width: auto;
+    height: 90px;   
+}
+
+
+.item-details {
+    flex: 1; /* takes all remaining space, pushes add button right */  
+}
+
+.item-add-btn {
+   width: 50px;
+   height: 50px;
+   border: 1px solid var(--color-gray);
+   border-radius: 50%;
+   background: transparent;
+   
+  display: flex; /* center the plus */
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* prevent the button from being squished */
+}
+
