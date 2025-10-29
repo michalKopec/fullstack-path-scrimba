@@ -25,11 +25,14 @@
   
   /* Colors */
   --color-accent: #16DB99;
+  --color-accent-dark: #065F46;
   --color-bg-light: #ECFDF5;
   --color-secondary: #8B8B8B; 
   --color-gray: #DEDEDE; 
   --color-gray-light: #3C3C3C; 
   --color-gray-medium: #D2D2D2; 
+  --color-gray-dark: #757575; /* for the dialog form placeholder text */
+  --color-gray-light-md: #BBBBBB; 
 }
 
 /* Typography Utilities */
@@ -38,6 +41,13 @@
   font-family: var(--font-primary);
   font-weight: var(--weight-regular);
   font-size: var(--text-2xl);     /* 32px */
+  line-height: var(--leading-tight); /* 16.8px */
+}
+
+.text-heading-md {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-xl);     /* 28px */
   line-height: var(--leading-tight); /* 16.8px */
 }
 
@@ -66,7 +76,6 @@
   color: var(--color-gray-light); 
 }
 
-
 /*
 .text-heading {
   font-family: var(--font-primary);
@@ -74,29 +83,28 @@
   font-size: var(--text-xl);      /* 28px 
   line-height: var(--leading-tight); } /* 16.8px */
 
-
-
-
-
-.text-caption {
+.text-secondary-sm {
   font-family: var(--font-secondary);
   font-weight: var(--weight-regular);
   font-size: var(--text-xs);      /* 12px */
   line-height: var(--leading-normal); /* 24px */
+  color: var(--color-gray-light-md); 
 }
 
-.text-body-bold {
+.text-header-bold {
   font-family: var(--font-secondary);
   font-weight: var(--weight-bold);
-  font-size: var(--text-sm);      /* 16px */
-  line-height: var(--leading-normal); /* 24px */
+  font-size: var(--text-lg);        /* 24px */
+  line-height: var(--leading-relaxed); /* 31.12px */
 }
 
-.text-title {
+/* form placeholder text */ 
+.text-placeholder::placeholder {
   font-family: var(--font-secondary);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-regular);
   font-size: var(--text-lg);      /* 24px */
   line-height: var(--leading-relaxed); /* 31.12px */
+  color: var(--color-gray-dark); 
 }
 
 .text-title-md {
@@ -183,11 +191,30 @@ main {
 /* order summary section */ 
 .order-summary {
   display: none;
+  text-align: center;
 }
 
 .order-item {
   display: flex; 
+  margin-bottom: 22px;
 }
+
+.order-item button {
+  border: none;
+  background: transparent;
+  margin-left: 14px; 
+}
+
+.order-item dd {
+  margin-left: auto; /* move to the right edge of the flex container  */
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
 
 .complete-order-btn {
   margin-top: 20px; 
@@ -200,7 +227,11 @@ main {
   background-color: var(--color-bg-light);
   padding: 40px 60px; 
   margin-top: 45px;
-  
+  text-align: center;
+}
+
+.order-confirmation p {
+  color: var(--color-accent-dark);
 }
 
 /* modal */ 
@@ -215,10 +246,39 @@ main {
     margin: auto;
     width: 524px;
     height: 542px; 
-    
-    background-color: #3C3C3C;
-    
+    padding: 50px 24px 30px; 
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
+
+.modal-header {
+  margin-bottom: 50px;
+}
+
+
+input {
+  width: 100%;
+  margin: 10px auto;
+  padding: 30px;
+  box-sizing: border-box; /* takes care of form input box sizing & centering  */
+  border: 1.5px solid var(--color-gray-dark); 
+  border-radius: 4px;
+}
+
+/* buttons  */
+
+.modal-pay-btn, 
+.complete-order-btn  {
+  width: 100%; 
+  padding: 30px;
+  margin-top: 40px; 
+  background-color: var(--color-accent);
+  border: none;
+  color: #fff; 
+  border-radius: 3px;
+}
+
 
 
 

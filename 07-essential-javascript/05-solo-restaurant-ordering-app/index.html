@@ -43,40 +43,75 @@
             </section>    
             
             <section class="order-summary"> 
-                <h2>Your order</h2>
+                <h2 class="text-heading-md">Your order</h2>
+                
+                
+                
+                
+                
+                
                 <dl class="order-items">
                     <div class="order-item">
-                        <dt>Pizza</dt>
-                        <button type="button" aria-label="Remove Pizza">remove</button>
-                        <dd>$14</dd>
+                        <dt class="text-heading">Pizza</dt>
+                        <button class="text-secondary-sm" type="button" aria-label="Remove Pizza">remove</button>
+                        <dd class="text-price">$14</dd>
                     </div>
                     <div class="order-item">
-                        <dt>Beer</dt>
-                        <button type="button" aria-label="Remove Beer">remove</button>
-                        <dd>$12</dd>
+                        <dt class="text-heading">Beer</dt>
+                        <button class="text-secondary-sm" type="button" aria-label="Remove Beer">remove</button>
+                        <dd class="text-price">$12</dd>
                     </div>
                 </dl>
+                <hr>
                 <div class="order-total">
-                    <strong>Total price:</strong>
-                    <data value="26">$26</data>
+                    <span class="text-heading">Total price:</span>
+                    <data class="text-price" value="26">$26</data>
                 </div>
-                <button class="complete-order-btn" id="order-btn">Complete order</button>
+                <button class="complete-order-btn text-title-md" id="order-btn">Complete order</button>
             </section>
             
+            
+                <!-- <div id="order-items" class="order-items">
+        <p>${order.quantity > 1 ? `${order.name} (${order.quantity})` : order.name}</p>
+        <button data-remove="${order.id}">remove</button>
+        <p>${order.price * order.quantity}$</p> -->
+    </div>
+            
             <section class="order-confirmation">
-                <p>Thanks, James! Your order is on its way!</p>
+                <p class="text-heading">Thanks, James! Your order is on its way!</p>
             </section>            
         </main>
     <!-- Modals here -->
-    <div class="modal" id="payment-modal">
-        <header>Enter card details</header>
-        <form>
-            <input type="text" placeholder="Enter your name" required>
-            <input type="number" placeholder="Enter card number" required>
-            <input type="number" placeholder="Enter CVV" required>
-            <button type="submit" id="pay-btn">Pay</button>
-        </form>
-    </div>
+        <div class="modal" id="modal">
+            <h2 class="modal-header text-header-bold">Enter card details</h2>
+            <form>
+                <!-- <label for="name">Enter your name</label> -->
+                <input 
+                    type="text" 
+                    id="name"
+                    name="username"
+                    placeholder="Enter your name" 
+                    class="text-placeholder"
+                    required
+                >
+                <input 
+                    type="number" 
+                    id="card"
+                    name="card"
+                    placeholder="Enter card number" 
+                    class="text-placeholder"
+                    required
+                >
+                <input 
+                    type="number" 
+                    id="cvv"
+                    name="cvv"
+                    placeholder="Enter CVV" 
+                    class="text-placeholder"
+                    required
+                >
+                <button type="submit" class="modal-pay-btn text-title-md" id="modal-pay-btn">Pay</button>
+        </div>
 	<script src="index.js"></script>
     </body>
 </html>
