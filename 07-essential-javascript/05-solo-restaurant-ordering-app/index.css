@@ -245,7 +245,7 @@ main {
     left: 0;
     margin: auto;
     width: 524px;
-    height: 542px; 
+    height: 642px; 
     padding: 50px 24px 30px; 
     background-color: #fff;
     text-align: center;
@@ -264,6 +264,11 @@ input {
   box-sizing: border-box; /* takes care of form input box sizing & centering  */
   border: 1.5px solid var(--color-gray-dark); 
   border-radius: 4px;
+}
+
+label {
+  display: block; 
+  text-align: left;
 }
 
 /* buttons  */
