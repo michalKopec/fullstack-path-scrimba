@@ -2,7 +2,6 @@
 
 <head>
     <!-- Google Fonts-->
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Smythe&display=swap" rel="stylesheet">
@@ -11,73 +10,64 @@
 
 <body>
     <header>
-        <img class="header-img" src="/images/header.png" alt="Close-up of a gourmet cheeseburger with lettuce, cheese, and a fried egg on a toasted bun">
+        <img class="header-img" src="images/header.png" alt="Close-up of a gourmet cheeseburger with lettuce, cheese, and a fried egg on a toasted bun">
     </header>
     <main>
         <section class="menu-feed" id="menu-feed">
-            
             <!-- Javascript generated menu goes here -->
-        
         </section>
 
         <section class="order-summary" id="order-summary">
-            <h2 class="text-heading-md">Your order</h2>
-            <dl class="order-items" id="order-items">
-                
-                  <!-- Javascript generated order summar goes here -->
-            
+            <h2 class="order-summary__title">Your order</h2>
+            <dl class="order-summary__items" id="order-items">
+                <!-- Javascript generated order summary goes here -->
             </dl>
             <hr>
-            <div class="order-total">
-                <span class="text-heading">Total price:</span>
-                <data class="text-price" id="text-price" value="" ></data>
+            <div class="order-summary__total">
+                <span class="order-summary__total-label">Total price:</span>
+                <data class="order-summary__total-price" id="text-price" value=""></data>
             </div>
-            <button class="complete-order-btn text-title-md" id="order-btn">Complete order</button>
+            <button class="order-summary__complete-btn" id="order-btn">Complete order</button>
         </section>
 
-        </div>
-
         <section class="order-confirmation" id="order-confirmation">
-            
-             <!-- Javascript generated order confirmation goes here -->
-        
+            <!-- Javascript generated order confirmation goes here -->
         </section>
     </main>
     
-    
     <!-- Modal -->
-    
     <div class="modal" id="modal">
-        <h2 class="modal-header text-header-bold">Enter card details</h2>
+        <h2 class="modal__header">Enter card details</h2>
         <form>
-            <label class="text-title-md" for="name">Enter your name</label>
+            <label class="modal__form-label" for="name">Enter your name</label>
             <input
-                    type="text"
-                    id="name"
-                    name="username"
-                    placeholder="First name"
-                    class="text-placeholder"
-                    required
-                />
-            <label class="text-title-md" for="card">Enter card number</label>    
-            <input
-                    type="number"
-                    id="card"
-                    name="card"
-                    placeholder="0000-0000-0000-0000"
-                    class="text-placeholder"
-                    required
+                type="text"
+                id="name"
+                name="username"
+                placeholder="First name"
+                class="modal__form-input"
+                required
             />
-            <label class="text-title-md" for="cvv">Enter CVV</label>     
+            <label class="modal__form-label" for="card">Enter card number</label>    
             <input
-                    type="number"
-                    id="cvv"
-                    name="cvv"
-                    placeholder="3/4 digits"
-                    class="text-placeholder"
-                    required
+                type="number"
+                id="card"
+                name="card"
+                placeholder="0000-0000-0000-0000"
+                class="modal__form-input"
+                required
             />
-            <button type="submit" class="modal-pay-btn text-title-md" id="modal-pay-btn">Pay</button>
+            <label class="modal__form-label" for="cvv">Enter CVV</label>     
+            <input
+                type="number"
+                id="cvv"
+                name="cvv"
+                placeholder="3/4 digits"
+                class="modal__form-input"
+                required
+            />
+            <button type="submit" class="modal__pay-btn" id="modal-pay-btn">Pay</button>
+        </form>
     </div>
     <script src="index.js" type="module"></script>
 </body>

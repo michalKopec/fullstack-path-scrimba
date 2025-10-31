@@ -1,4 +1,6 @@
-/* design system */
+/* ================================
+   DESIGN TOKENS (CSS Variables)
+   ================================ */
 :root {
   /* Font Families */
   --font-primary: Smythe, serif;
@@ -31,259 +33,272 @@
   --color-gray: #DEDEDE; 
   --color-gray-light: #3C3C3C; 
   --color-gray-medium: #D2D2D2; 
-  --color-gray-dark: #757575; /* for the dialog form placeholder text */
+  --color-gray-dark: #757575;
   --color-gray-light-md: #BBBBBB; 
 }
 
-/* Typography Utilities */
-
-.text-heading {
-  font-family: var(--font-primary);
-  font-weight: var(--weight-regular);
-  font-size: var(--text-2xl);     /* 32px */
-  line-height: var(--leading-tight); /* 16.8px */
-}
-
-.text-heading-md {
-  font-family: var(--font-primary);
-  font-weight: var(--weight-regular);
-  font-size: var(--text-xl);     /* 28px */
-  line-height: var(--leading-tight); /* 16.8px */
-}
-
-.text-subheading {
-  font-family: var(--font-primary);
-  font-weight: var(--weight-regular);
-  font-size: var(--text-sm);      /* 16px */
-  line-height: var(--leading-normal); /* 24px */
-  color: var(--color-secondary); 
-}
-
-
-.text-price {
-  font-family: var(--font-primary);
-  font-weight: var(--weight-regular);
-  font-size: var(--text-md);      /* 20px */ 
-  line-height: var(--leading-normal); /* 24px */
-}
-
-.text-icon {
-  font-family: var(--font-tertiary);
-  font-weight: var(--weight-thin);
-  font-size: var(--text-2xl);     /* 32px */
-  line-height: var(--leading-normal); /* 24px */
-  text-align: center;
-  color: var(--color-gray-light); 
-}
-
-/*
-.text-heading {
-  font-family: var(--font-primary);
-  font-weight: var(--weight-regular);
-  font-size: var(--text-xl);      /* 28px 
-  line-height: var(--leading-tight); } /* 16.8px */
-
-.text-secondary-sm {
-  font-family: var(--font-secondary);
-  font-weight: var(--weight-regular);
-  font-size: var(--text-xs);      /* 12px */
-  line-height: var(--leading-normal); /* 24px */
-  color: var(--color-gray-light-md); 
-}
-
-.text-header-bold {
-  font-family: var(--font-secondary);
-  font-weight: var(--weight-bold);
-  font-size: var(--text-lg);        /* 24px */
-  line-height: var(--leading-relaxed); /* 31.12px */
-}
-
-/* form placeholder text */ 
-.text-placeholder::placeholder {
-  font-family: var(--font-secondary);
-  font-weight: var(--weight-regular);
-  font-size: var(--text-lg);      /* 24px */
-  line-height: var(--leading-relaxed); /* 31.12px */
-  color: var(--color-gray-dark); 
-}
-
-.text-title-md {
-  font-family: var(--font-secondary);
-  font-weight: var(--weight-bold);
-  font-size: var(--text-md);      /* 20px */
-  line-height: var(--leading-relaxed); /* 31.12px */
-}
-
-
-/* page styles  */
-
+/* ================================
+   BASE STYLES
+   ================================ */
 body {
-    margin: 0 auto;
-    max-width: 600px; 
-    background-color: #F5F5F5; 
+  margin: 0 auto;
+  max-width: 600px; 
+  background-color: #F5F5F5; 
 } 
 
 ul {
-    margin:0;
-    padding:0;
-    list-style: none;
-    
-
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 main {
-    background-color: #fff; 
-    padding: 30px 46px 0px; 
+  background-color: #fff; 
+  padding: 30px 46px 0px; 
 }
 
+/* ================================
+   HEADER
+   ================================ */
 .header-img {
-    display: block; /*remove the gap between header image and menu feed */
-    width: 100%;
-    height: auto; 
+  display: block;
+  width: 100%;
+  height: auto; 
 }
 
-/* menu feed item  */
-
-.item-details {
-      margin-top: 14px; /* align the item name visually following figma */
+/* ================================
+   MENU ITEM COMPONENT
+   ================================ */
+.menu-item {
+  display: flex; 
+  align-items: center;
+  gap: 30px; 
+  height: 185px; 
+  border-bottom: 1px solid var(--color-gray-medium); 
 }
 
-.item-name {
+.menu-item__picture {
+  width: auto;
+  height: 90px;   
+}
+
+.menu-item__details {
+  flex-grow: 1;
+  margin-top: 14px;
+}
+
+.menu-item__name {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
   margin-bottom: 8px;
 }
 
-.item-ingredients {
+.menu-item__ingredients {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-secondary);
   margin-bottom: 16px;
 }
 
-.menu-item {
-    display: flex; 
-    align-items: center; /*TO DO the add buttons are slightly off center, check back with Figma */
-    gap: 30px; 
-    height: 185px; 
-    border-bottom: 1px solid var(--color-gray-medium); 
+.menu-item__price {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
 }
 
-.item-picture {
-    width: auto;
-    height: 90px;   
+.menu-item__add-btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--color-gray);
+  border-radius: 50%;
+  background: transparent;
+  font-family: var(--font-tertiary);
+  font-weight: var(--weight-thin);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-normal);
+  text-align: center;
+  color: var(--color-gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
-
-.item-details {
-    flex-grow: 1; /* takes all remaining space, pushes add button right */ 
-     
-}
-
-.item-add-btn {
-   width: 50px;
-   height: 50px;
-   border: 1px solid var(--color-gray);
-   border-radius: 50%;
-   background: transparent;
-   
-    display: flex; /* center the plus */
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0; /* prevent the button from being squished */
-}
-
-/* order summary section */ 
+/* ================================
+   ORDER SUMMARY COMPONENT
+   ================================ */
 .order-summary {
   display: none;
   text-align: center;
 }
 
-.order-item {
-  display: flex; 
+.order-summary__title {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+}
+
+.order-summary__items {
+  /* Container for order items */
+}
+
+.order-summary__item {
+  display: flex;
   margin-bottom: 22px;
 }
 
-.order-item button {
+.order-summary__item-name {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+}
+
+.order-summary__remove-btn {
   border: none;
   background: transparent;
-  margin-left: 14px; 
+  margin-left: 14px;
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--color-gray-light-md);
+  cursor: pointer;
 }
 
-.order-item dd {
-  margin-left: auto; /* move to the right edge of the flex container  */
+.order-summary__item-price {
+  margin-left: auto;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
 }
 
-.order-total {
+.order-summary__total {
   display: flex;
   justify-content: space-between;
   margin-top: 24px;
 }
 
-
-.complete-order-btn {
-  margin-top: 20px; 
-  width: 100%; 
+.order-summary__total-label {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
 }
 
-/* order confirmation section */
+.order-summary__total-price {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+}
+
+.order-summary__complete-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 30px;
+  background-color: var(--color-accent);
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  cursor: pointer;
+}
+
+/* ================================
+   ORDER CONFIRMATION COMPONENT
+   ================================ */
 .order-confirmation {
-  display: none; 
+  display: none;
   background-color: var(--color-bg-light);
-  padding: 40px 60px; 
+  padding: 40px 60px;
   margin-top: 45px;
   text-align: center;
 }
 
-.order-confirmation p {
+.order-confirmation__message {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
   color: var(--color-accent-dark);
 }
 
-/* modal */ 
-
+/* ================================
+   MODAL COMPONENT
+   ================================ */
 .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    width: 524px;
-    height: 642px; 
-    padding: 50px 24px 30px; 
-    background-color: #fff;
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 524px;
+  height: 642px;
+  padding: 50px 24px 30px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
-.modal-header {
+.modal__header {
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
   margin-bottom: 50px;
 }
 
+.modal__form-label {
+  display: block;
+  text-align: left;
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+}
 
-input {
+.modal__form-input {
   width: 100%;
   margin: 10px auto;
   padding: 30px;
-  box-sizing: border-box; /* takes care of form input box sizing & centering  */
-  border: 1.5px solid var(--color-gray-dark); 
+  box-sizing: border-box;
+  border: 1.5px solid var(--color-gray-dark);
   border-radius: 4px;
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
 }
 
-label {
-  display: block; 
-  text-align: left;
+.modal__form-input::placeholder {
+  color: var(--color-gray-dark);
 }
 
-/* buttons  */
-
-.modal-pay-btn, 
-.complete-order-btn  {
-  width: 100%; 
+.modal__pay-btn {
+  width: 100%;
   padding: 30px;
-  margin-top: 40px; 
+  margin-top: 40px;
   background-color: var(--color-accent);
   border: none;
-  color: #fff; 
+  color: #fff;
   border-radius: 3px;
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  cursor: pointer;
 }
-
-
-
-
