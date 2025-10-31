@@ -5,12 +5,12 @@ const orderEl = document.getElementById("order-items");
 const totalPriceEl = document.getElementById("text-price"); 
 const orderConfirmationEl = document.getElementById("order-confirmation"); 
 let totalPrice = 0; 
+let orderComplete = false; 
 
 // Main event loop 
 document.addEventListener('click', function(e) {
     if (e.target.dataset.add){
-        document.querySelector(".order-summary").style.display="block";
-        getOrderHTML(e.target.dataset.add)
+        setupOrderFlow(e.target.dataset.add)
     }
     else if(e.target.dataset.remove) {
         removeItemAndUpdateTotal(e.target)
@@ -23,7 +23,9 @@ document.addEventListener('click', function(e) {
 document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
     orderConfirmation(document.querySelector('#name').value)
+    this.reset(); // 'this' refers to the form. Reset the form for next use. 
 }) 
+
 
 // Create food menu HTML
 function getMenuHTML() {
@@ -42,6 +44,20 @@ function getMenuHTML() {
         ` 
     }) 
     return menuHTML; 
+}
+
+
+// New order or is there a prior order? Remove the prior order to start from scratch 
+function setupOrderFlow(item) {
+    
+    if (orderComplete) { // is there a prior order? 
+        orderEl.innerHTML = '';  // reset prior order to start from scratch 
+        document.querySelector("#order-confirmation").style.display="none";
+        orderComplete = false; 
+    } 
+
+    document.querySelector(".order-summary").style.display="block";
+    getOrderHTML(item); 
 }
 
 // Create order 
@@ -85,15 +101,16 @@ function updateOrderTotal(price) {
 // Complete order 
 function showEnterCardDetails() {
     document.querySelector("#modal").style.display="block";
-    document.querySelector("#order-summary").style.display="none";
 }
 
 // Modal: pay for order and display confirmation 
 function orderConfirmation(name) {
     document.querySelector("#modal").style.display="none";
+    document.querySelector("#order-summary").style.display="none";
     document.querySelector("#order-confirmation").style.display="block";
     
     orderConfirmationEl.innerHTML = `<p class="order-confirmation__message">Thanks, ${name}! Your order is on its way!</p>`
+    orderComplete = true; 
 }
 
 // Render menu items 

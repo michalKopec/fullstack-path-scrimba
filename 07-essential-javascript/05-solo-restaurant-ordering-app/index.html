@@ -45,15 +45,20 @@
                 id="name"
                 name="username"
                 placeholder="First name"
+                pattern="[A-Za-z\s]+"
+                title="Please use letters and spaces only"
                 class="modal__form-input"
                 required
             />
             <label class="modal__form-label" for="card">Enter card number</label>    
             <input
                 type="number"
+                inputmode="numeric"
                 id="card"
                 name="card"
                 placeholder="0000-0000-0000-0000"
+                inputmode="numeric"
+                pattern="[0-9]+" maxlength="16" title="Please use numbers only"
                 class="modal__form-input"
                 required
             />
@@ -63,6 +68,8 @@
                 id="cvv"
                 name="cvv"
                 placeholder="3/4 digits"
+                inputmode="numeric" pattern="[0-9]+"
+                maxlength="4" title="Please use numbers only"
                 class="modal__form-input"
                 required
             />
